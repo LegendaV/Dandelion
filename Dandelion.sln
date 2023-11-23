@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dandalion", "Dandalion\Dandalion.csproj", "{FA0093B8-5B8C-4597-ACA9-CF0D0DFA558F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DandelionAPI", "DandelionAPI\DandelionAPI.csproj", "{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA0093B8-5B8C-4597-ACA9-CF0D0DFA558F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA0093B8-5B8C-4597-ACA9-CF0D0DFA558F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA0093B8-5B8C-4597-ACA9-CF0D0DFA558F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA0093B8-5B8C-4597-ACA9-CF0D0DFA558F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CDF812D4-242E-4ECA-AFE0-8FCD5443475F}
+	EndGlobalSection
+EndGlobal
