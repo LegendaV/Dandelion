@@ -1,0 +1,97 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="11.0.2"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.0.2"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.2"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.2"/>
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.2"/>
+        <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    </ItemGroup>
+    
+
+    <ItemGroup>
+      <None Remove="assets\fonts\Exo2-Bold.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Bold.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-Black.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Black.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-BlackItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-BlackItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-BoldItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-BoldItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-ExtraBold.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-ExtraBold.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-ExtraBoldItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-ExtraBoldItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-ExtraLight.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-ExtraLight.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-ExtraLightItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-ExtraLightItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-Italic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Italic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-Light.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Light.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-LightItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-LightItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-Medium.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Medium.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-MediumItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-MediumItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-Regular.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Regular.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-SemiBold.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-SemiBold.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-SemiBoldItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-SemiBoldItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-Thin.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-Thin.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+      <None Remove="assets\fonts\Exo2-ThinItalic.ttf" />
+      <AvaloniaResource Include="assets\fonts\Exo2-ThinItalic.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </AvaloniaResource>
+    </ItemGroup>
+</Project>

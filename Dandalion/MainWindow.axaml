@@ -1,0 +1,115 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="756" d:DesignHeight="491"
+        x:Class="Dandalion.MainWindow"
+        Title="Dandalion"
+        WindowStartupLocation="CenterScreen"
+        Width="756"
+        Height="491"
+        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\ico.png" >
+    
+    <Window.Background>
+        <ImageBrush Source="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\main.png"
+                    Stretch="UniformToFill" />
+    </Window.Background>
+    
+    <Window.Styles>
+        <Style Selector="Button.SignIn">
+            <Setter Property="Opacity" Value="0.8" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.SignIn:pointerover">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        
+        
+        <Style Selector="TextBox.Pass">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="TextBox.Pass:focus">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+    </Window.Styles>
+
+    
+
+    <Viewbox Stretch="Uniform">
+        <Grid RowDefinitions="*,Auto,Auto,Auto,Auto,*"
+              ColumnDefinitions="*,*,*">
+            <!-- Title -->
+            <TextBlock Grid.Row="1"
+                       Grid.Column="1"
+                       Text="Dandalion"
+                       FontWeight="Bold"
+                       Foreground="White"
+                       Margin="0,120,0,5"
+                       FontSize="50"
+                       HorizontalAlignment="Center" />
+
+            <!-- Username Input -->
+            <TextBox Grid.Row="2"
+                     Grid.Column="1"
+                     x:Name="UsernameInputTextBox"
+                     Classes="Pass"
+                     Margin="0,15,0,0"
+                     Watermark="Логин"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Center"
+                     Width="160"
+                     BorderThickness="1"
+                     BorderBrush="White"
+                     Background="#07040d"/>
+
+            <!-- Password Input -->
+            <TextBox Grid.Row="3"
+                     Grid.Column="1"
+                     x:Name="PasswordInputTextBox"
+                     Classes="Pass"
+                     Margin="0,3,0,0"
+                     Watermark="Пароль"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Center"
+                     PasswordChar="*"
+                     Width="160"
+                     BorderThickness="1"
+                     BorderBrush="White"
+                     Background="#07040d"/>
+
+            <!-- Login Button -->
+            <Button Grid.Row="4"
+                    Grid.Column="1"
+                    x:Name="LoginButton"
+                    Classes="SignIn"
+                    Margin="0,10,0,10"
+                    Content="Войти"
+                    FontWeight="Bold"
+                    FontSize="17"
+                    Background="#FF00A8"
+                    HorizontalContentAlignment="Center"
+                    VerticalContentAlignment="Center"
+                    HorizontalAlignment="Stretch"
+                    Foreground="White"
+                    MaxWidth="160"
+                    Cursor="Hand" />
+
+
+            <!-- Register Account Link -->
+            <TextBlock Grid.Row="5"
+                       Grid.Column="1"
+                       x:Name="CreateAccount"
+                       Text="создать аккаунт"
+                       Foreground="White"
+                       FontSize="11"
+                       Margin="0,0,0,50"
+                       HorizontalAlignment="Center"
+                       Cursor="Hand" />
+
+        </Grid>
+    </Viewbox>
+</Window>

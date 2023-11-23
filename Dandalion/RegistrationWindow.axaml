@@ -1,0 +1,146 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="756" d:DesignHeight="491"
+        x:Class="Dandalion.RegistrationWindow"
+        Title="Dandalion"
+        WindowStartupLocation="CenterScreen"
+        Width="756"
+        Height="491"
+        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\ico.png">
+    
+    <Window.Background>
+        <ImageBrush Source="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\main.png"
+                    Stretch="UniformToFill" />
+    </Window.Background>
+    
+    <Window.Styles>
+        <!-- Основной стиль для кнопки "SignIn" -->
+        <Style Selector="Button.Reg">
+            <Setter Property="Opacity" Value="0.8" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <DoubleTransition Property="Opacity" Duration="0:0:0.4" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <!-- Стиль для кнопки "SignIn" при наведении курсора -->
+        <Style Selector="Button.Reg:pointerover">
+            <Setter Property="Opacity" Value="1" />
+        </Style>
+        
+        
+        <Style Selector="TextBox">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+    </Window.Styles>
+
+
+    <Viewbox Stretch="Uniform">
+        <Grid Margin="0,140,0,100 ">
+            <Border Background="#2c0c3b" CornerRadius="20" Padding="3,30,17,15" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Width="260">
+                <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto, Auto" ColumnDefinitions="Auto,*"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+                    <!-- Поле для логина -->
+                    <Image Grid.Row="0" Grid.Column="0"
+                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\reg_login.png"
+                           Width="10"
+                           Height="10"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,5" />
+                    <TextBox Grid.Row="0" Grid.Column="1"
+                             x:Name="UsernameTextBox"
+                             Watermark="Логин"
+                             Background="#2c0c3b"
+                             BorderThickness="1"
+                             BorderBrush="White"
+                             Margin="5,0,0 ,5" />
+
+                    <!-- Поле для email -->
+                    <Image Grid.Row="1" Grid.Column="0"
+                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\reg_email.png"
+                           Width="10"
+                           Height="10"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,5" />
+                    <TextBox Grid.Row="1" Grid.Column="1"
+                             x:Name="EmailTextBox"
+                             Watermark="Email"
+                             Background="#2c0c3b"
+                             BorderThickness="1"
+                             BorderBrush="White"
+                             Margin="5,0, 0,5" />
+
+                    <!-- Поле для пароля -->
+                    <Image Grid.Row="2" Grid.Column="0"
+                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\reg_password.png"
+                           Width="10"
+                           Height="10"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,5" />
+                    <TextBox Grid.Row="2" Grid.Column="1"
+                             x:Name="PasswordTextBox"
+                             Watermark="Пароль"
+                             Background="#2c0c3b"
+                             BorderThickness="1"
+                             BorderBrush="White"
+                             PasswordChar="*"
+                             Margin="5,0, 0,5" />
+
+                    <!-- Поле для повторного ввода пароля -->
+                    <Image Grid.Row="3" Grid.Column="0"
+                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandalion\Dandelion\Dandalion\assets\image\reg_password.png"
+                           Width="10"
+                           Height="10"
+                           VerticalAlignment="Center"
+                           Margin="0,0,0,5" />
+                    <TextBox Grid.Row="3" Grid.Column="1"
+                             x:Name="ConfirmPasswordTextBox"
+                             Watermark="Повторите пароль"
+                             Background="#2c0c3b"
+                             BorderThickness="1"
+                             BorderBrush="White"
+                             PasswordChar="*"
+                             Margin="5,0, 0,5" />
+
+                    <!-- Кнопка регистрации -->
+                    <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                            Content="Регистрация"
+                            Classes="Reg"
+                            HorizontalContentAlignment="Center"
+                            VerticalContentAlignment="Center"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Background="#FF00A8"
+                            Foreground="White"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Height="35"
+                            Width="180"
+                            BorderThickness="1"
+                            BorderBrush="#FF00A8"
+                            Margin="15,10, 0, 5" />
+                            <!--Click="RegisterButton_Click"-->
+
+                    <!-- Кнопка войти -->
+                    <TextBlock Grid.Row="5"
+                               Grid.Column="1"
+                               x:Name="SignIn"
+                               Text="войти"
+                               Foreground="White"
+                               FontSize="12"
+                               Margin="0,5,0,0"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               Cursor="Hand" />
+                </Grid>
+            </Border>
+        </Grid>
+    </Viewbox>
+</Window>
