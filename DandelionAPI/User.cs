@@ -2,13 +2,24 @@
 {
     public class User
     {
-        public string Name { get; set; }
-        public string Password { get; set; }
+        private static int id_counter = 0;
 
-        public User(string name, string password)
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public int PasswordHash { get; set; }
+
+        public User(string name, int passwordHash, string email)
         {
+            Id = id_counter++;
             Name = name;
-            Password = password;
+            PasswordHash = passwordHash;
+            Email = email;
+        }
+
+        public static implicit operator UserDto(User user)
+        {
+            return new UserDto(user.Id, user.Name);
         }
     }
 }
