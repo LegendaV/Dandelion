@@ -11,7 +11,7 @@ using mathsteam.Data;
 namespace mathsteam.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231125105400_init")]
+    [Migration("20231126184147_init")]
     partial class init
     {
         /// <inheritdoc />
