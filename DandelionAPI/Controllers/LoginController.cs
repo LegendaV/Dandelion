@@ -42,6 +42,25 @@ namespace DandelionAPI.Controllers
                 return BadRequest("Некорректные данные");
             }
             var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.Email);
+
+            using (AppDbContext db = new AppDbContext())
+            {
+
+                // добавляем их в бд
+                db.Users.AddRange(user);
+                db.SaveChanges();
+            }
+            // получение данных
+            using (AppDbContext db = new AppDbContext())
+            {
+                // получаем объекты из бд и выводим на консоль
+                var users = db.Users.ToList();
+                Console.WriteLine("Users list:");
+                foreach (User u in users)
+                {
+                    Console.WriteLine($"{u.Id}.{u.Name}");
+                }
+            }
             Repo.AddUser(user);
             await DandelionAuthentication.Authenticate(HttpContext, user.Name);
             UserDto result = user;
