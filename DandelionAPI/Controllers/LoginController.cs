@@ -12,46 +12,16 @@ namespace DandelionAPI.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        [HttpGet("login")]
-        public async void GetLoginPage()
-        {
-            Response.ContentType = "text/html; charset=utf-8";
-            string loginForm = @"<!DOCTYPE html>
-                <html>
-                <head>
-                    <meta charset='utf-8' />
-                    <title>Dandelion</title>
-                </head>
-                <body>
-                    <h2>Login Form</h2>
-                    <form method='post'>
-                        <p>
-                            <label>Email</label><br />
-                            <input name='email' />
-                        </p>
-                        <p>
-                            <label>Password</label><br />
-                            <input type='password' name='password' />
-                        </p>
-                        <input type='submit' value='Login' />
-                    </form>
-                </body>
-                </html>";
-            await Response.WriteAsync(loginForm);
-        }
-
         [HttpPost("login")]
-        public async Task<ActionResult<UserDto>> Login()
+        public async Task<ActionResult<UserDto>> Login([FromBody] UserAuthenticationDto userDto)
         {
-            var form = Request.Form;
-            if (!form.ContainsKey("email") || !form.ContainsKey("password"))
+            if (userDto.Email == null || userDto.Password == null)
             {
-                return BadRequest("Пользователь не найден");
+                return BadRequest($"Пользователь не найден");
             }
-            var name = form["email"];
-            var passwordHash = form["password"].GetHashCode();
+            var passwordHash = userDto.Password.GetHashCode();
 
-            var person = Repo.GetAllUsers().FirstOrDefault(p => p.Name == name && p.PasswordHash == passwordHash);
+            var person = Repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
 
             if (person is null)
             {
@@ -76,12 +46,6 @@ namespace DandelionAPI.Controllers
             await DandelionAuthentication.Authenticate(HttpContext, user.Name);
             UserDto result = user;
             return result;
-        }
-
-        [HttpPost("test")]
-        public async Task<ActionResult> test([FromBody] UserDto user)
-        {
-            return Ok(user.Name);
         }
 
         [Authorize]
