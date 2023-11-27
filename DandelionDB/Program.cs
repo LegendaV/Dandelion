@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+//docker-compose up --build чтобы поднять базу данных
 
 // Add services to the container.
 builder.Services.AddRazorPages();

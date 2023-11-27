@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dandalion", "Dandalion\Dand
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DandelionAPI", "DandelionAPI\DandelionAPI.csproj", "{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DandelionDB", "DandelionDB\DandelionDB.csproj", "{9CEE329B-306E-4689-AF7F-062FBA806274}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{64986884-5EE3-4BB7-A3D6-6D442DFDE7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CEE329B-306E-4689-AF7F-062FBA806274}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CEE329B-306E-4689-AF7F-062FBA806274}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CEE329B-306E-4689-AF7F-062FBA806274}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CEE329B-306E-4689-AF7F-062FBA806274}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
