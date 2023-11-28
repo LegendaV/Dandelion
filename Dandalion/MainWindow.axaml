@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Width="756"
         Height="491"
-        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\ico.png" >
+        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\logoblack.png" >
     
     <Window.Background>
         <ImageBrush Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\main.png"
@@ -55,7 +55,7 @@
             <!-- Username Input -->
             <TextBox Grid.Row="2"
                      Grid.Column="1"
-                     x:Name="UsernameInputTextBox"
+                     x:Name="UsernameLoginTextBox"
                      Classes="Pass"
                      Margin="0,15,0,0"
                      Watermark="Логин"
@@ -69,7 +69,7 @@
             <!-- Password Input -->
             <TextBox Grid.Row="3"
                      Grid.Column="1"
-                     x:Name="PasswordInputTextBox"
+                     x:Name="PasswordLoginTextBox"
                      Classes="Pass"
                      Margin="0,3,0,0"
                      Watermark="Пароль"
