@@ -8,10 +8,10 @@
         WindowStartupLocation="CenterScreen"
         Width="756"
         Height="491"
-        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\logoblack.png" >
+        Icon="\assets\image\logoblack.png" >
     
     <Window.Background>
-        <ImageBrush Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\main.png"
+        <ImageBrush Source="\assets\image\main.png"
                     Stretch="UniformToFill" />
     </Window.Background>
     

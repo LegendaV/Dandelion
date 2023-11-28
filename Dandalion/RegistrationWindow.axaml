@@ -8,10 +8,10 @@
         WindowStartupLocation="CenterScreen"
         Width="756"
         Height="491"
-        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\logoblack.png">
+        Icon="\assets\image\logoblack.png">
     
     <Window.Background>
-        <ImageBrush Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\main.png"
+        <ImageBrush Source="\assets\image\main.png"
                     Stretch="UniformToFill" />
     </Window.Background>
     
@@ -49,7 +49,7 @@
                       VerticalAlignment="Center">
                     <!-- Поле для логина -->
                     <Image Grid.Row="0" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_login.png"
+                           Source="\assets\image\reg_login.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
@@ -64,7 +64,7 @@
 
                     <!-- Поле для email -->
                     <Image Grid.Row="1" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_email.png"
+                           Source="\assets\image\reg_email.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
@@ -79,7 +79,7 @@
 
                     <!-- Поле для пароля -->
                     <Image Grid.Row="2" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_password.png"
+                           Source="\assets\image\reg_password.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
@@ -95,7 +95,7 @@
 
                     <!-- Поле для повторного ввода пароля -->
                     <Image Grid.Row="3" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_password.png"
+                           Source="\assets\image\reg_password.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
