@@ -42,6 +42,7 @@ namespace DandelionAPI.Controllers
                 return BadRequest("Некорректные данные");
             }
             var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.Email);
+            
             /*
             using (AppDbContext db = new AppDbContext())
             {
@@ -62,6 +63,7 @@ namespace DandelionAPI.Controllers
                 }
             }
             */
+            
             Repo.AddUser(user);
             await DandelionAuthentication.Authenticate(HttpContext, user.Name);
             UserDto result = user;

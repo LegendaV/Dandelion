@@ -8,10 +8,10 @@
         WindowStartupLocation="CenterScreen"
         Width="756"
         Height="491"
-        Icon="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\ico.png">
+        Icon="\assets\image\logoblack.png">
     
     <Window.Background>
-        <ImageBrush Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\main.png"
+        <ImageBrush Source="\assets\image\main.png"
                     Stretch="UniformToFill" />
     </Window.Background>
     
@@ -49,13 +49,13 @@
                       VerticalAlignment="Center">
                     <!-- Поле для логина -->
                     <Image Grid.Row="0" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_login.png"
+                           Source="\assets\image\reg_login.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
                            Margin="0,0,0,5" />
                     <TextBox Grid.Row="0" Grid.Column="1"
-                             x:Name="UsernameTextBox"
+                             x:Name="UsernameRegisterTextBox"
                              Watermark="Логин"
                              Background="#2c0c3b"
                              BorderThickness="1"
@@ -64,13 +64,13 @@
 
                     <!-- Поле для email -->
                     <Image Grid.Row="1" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_email.png"
+                           Source="\assets\image\reg_email.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
                            Margin="0,0,0,5" />
                     <TextBox Grid.Row="1" Grid.Column="1"
-                             x:Name="EmailTextBox"
+                             x:Name="EmailRegisterTextBox"
                              Watermark="Email"
                              Background="#2c0c3b"
                              BorderThickness="1"
@@ -79,13 +79,13 @@
 
                     <!-- Поле для пароля -->
                     <Image Grid.Row="2" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_password.png"
+                           Source="\assets\image\reg_password.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
                            Margin="0,0,0,5" />
                     <TextBox Grid.Row="2" Grid.Column="1"
-                             x:Name="PasswordTextBox"
+                             x:Name="PasswordRegisterTextBox"
                              Watermark="Пароль"
                              Background="#2c0c3b"
                              BorderThickness="1"
@@ -95,13 +95,13 @@
 
                     <!-- Поле для повторного ввода пароля -->
                     <Image Grid.Row="3" Grid.Column="0"
-                           Source="C:\Users\Hp\Desktop\FIIT\info\Dandelion\Dandalion\assets\image\reg_password.png"
+                           Source="\assets\image\reg_password.png"
                            Width="10"
                            Height="10"
                            VerticalAlignment="Center"
                            Margin="0,0,0,5" />
                     <TextBox Grid.Row="3" Grid.Column="1"
-                             x:Name="ConfirmPasswordTextBox"
+                             x:Name="ConfirmPasswordRegisterTextBox"
                              Watermark="Повторите пароль"
                              Background="#2c0c3b"
                              BorderThickness="1"
@@ -125,8 +125,8 @@
                             Width="180"
                             BorderThickness="1"
                             BorderBrush="#FF00A8"
-                            Margin="15,10, 0, 5" />
-                            <!--Click="RegisterButton_Click"-->
+                            Margin="15,10, 0, 5" 
+                            Click="OnRegisterButtonClickAsync"/>
 
                     <!-- Кнопка войти -->
                     <TextBlock Grid.Row="5"
