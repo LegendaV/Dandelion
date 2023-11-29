@@ -1,10 +1,12 @@
-﻿namespace DandelionAPI
+﻿using DandelionAPI.Interface;
+
+namespace DandelionAPI
 {
-    public class Game
+    public class Game : IGame
     {
         private static int globalId = 0;
 
-        public readonly int Id;
+        public int Id { get; }
         public readonly int OwnerID;
 
         public string Name { get; private set; }
