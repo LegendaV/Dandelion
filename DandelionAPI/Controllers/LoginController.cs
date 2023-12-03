@@ -12,6 +12,12 @@ namespace DandelionAPI.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        private AppDbContext appDbContext;
+        public LoginController(AppDbContext dbContext)
+        {
+            appDbContext = dbContext;
+        }
+
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login([FromBody] UserAuthenticationDto userDto)
         {
@@ -21,7 +27,10 @@ namespace DandelionAPI.Controllers
             }
             var passwordHash = userDto.Password.GetHashCode();
 
-            var person = Repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
+            Console.WriteLine(appDbContext.Users);
+
+            var person = appDbContext.Users.FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
+            //var person = Repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
 
             if (person is null)
             {
@@ -43,28 +52,19 @@ namespace DandelionAPI.Controllers
             }
             var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.Email);
             
-            /*
-            using (AppDbContext db = new AppDbContext())
-            {
 
-                // добавляем их в бд
-                db.Users.AddRange(user);
-                db.SaveChanges();
-            }
-            // получение данных
-            using (AppDbContext db = new AppDbContext())
+            appDbContext.Users.AddRange(user);
+            appDbContext.SaveChanges();
+
+            // получаем объекты из бд и выводим на консоль
+            var users = appDbContext.Users.ToList();
+            Console.WriteLine("Users list:");
+            foreach (User u in users)
             {
-                // получаем объекты из бд и выводим на консоль
-                var users = db.Users.ToList();
-                Console.WriteLine("Users list:");
-                foreach (User u in users)
-                {
-                    Console.WriteLine($"{u.Id}.{u.Name}");
-                }
+                Console.WriteLine($"{u.Id}.{u.Name}");
             }
-            */
             
-            Repo.AddUser(user);
+            //Repo.AddUser(user);
             await DandelionAuthentication.Authenticate(HttpContext, user.Name);
             UserDto result = user;
             return result;

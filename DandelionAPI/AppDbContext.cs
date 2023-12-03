@@ -6,14 +6,14 @@ namespace DandelionAPI
 {
     public class AppDbContext : DbContext
     {
-        public AppDbContext()
+        public AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : base(dbContextOptions)
         {
             Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseNpgsql("Host=localhost;port=5432;Database=test_db;Username=root;Password=root");
+            //options.UseNpgsql("Host=localhost;port=5432;Database=test_db;Username=root;Password=root");
         }
 
         public DbSet<User> Users { get; set; }

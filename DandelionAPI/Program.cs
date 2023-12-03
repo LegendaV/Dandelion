@@ -14,13 +14,12 @@ namespace DandelionAPI
                 .AddCookie(options => options.LoginPath = "/login");
             builder.Services.AddAuthorization();
           
-            /*
-            builder.Services.AddDbContext<AppDbContext>((serviceProvider, options) =>
+            builder.Services.AddDbContext<AppDbContext>((options) =>
             {
-                var configuration = serviceProvider.GetRequiredService<IConfiguration>();
-                options.UseNpgsql("Host=localhost;port=5432;Database=dandeliondb;Username=root;Password=root");
+                options.UseNpgsql("Host=localhost;port=5432;Database=test_db;Username=root;Password=root");
             });
-            */
+
+            var database = builder.Configuration.GetConnectionString("WebApiDatabase");
           
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
