@@ -19,6 +19,8 @@ namespace DandelionAPI
                 options.UseNpgsql("Host=localhost;port=5432;Database=test_db;Username=root;Password=root");
             });
 
+            builder.Services.AddScoped<Repo, Repo>();
+
             var database = builder.Configuration.GetConnectionString("WebApiDatabase");
           
             builder.Services.AddControllers();

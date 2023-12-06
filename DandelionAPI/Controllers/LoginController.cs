@@ -12,10 +12,10 @@ namespace DandelionAPI.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private AppDbContext appDbContext;
-        public LoginController(AppDbContext dbContext)
+        private Repo repo;
+        public LoginController(Repo repo)
         {
-            appDbContext = dbContext;
+            this.repo = repo;
         }
 
         [HttpPost("login")]
@@ -26,11 +26,11 @@ namespace DandelionAPI.Controllers
                 return BadRequest($"Пользователь не найден");
             }
             var passwordHash = userDto.Password.GetHashCode();
+            Console.WriteLine(passwordHash);
+            Console.WriteLine("Slava".GetHashCode());
 
-            Console.WriteLine(appDbContext.Users);
+            var person = repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
 
-            var person = appDbContext.Users.FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
-            //var person = Repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
 
             if (person is null)
             {
@@ -51,20 +51,9 @@ namespace DandelionAPI.Controllers
                 return BadRequest("Некорректные данные");
             }
             var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.Email);
-            
 
-            appDbContext.Users.AddRange(user);
-            appDbContext.SaveChanges();
-
-            // получаем объекты из бд и выводим на консоль
-            var users = appDbContext.Users.ToList();
-            Console.WriteLine("Users list:");
-            foreach (User u in users)
-            {
-                Console.WriteLine($"{u.Id}.{u.Name}");
-            }
+            repo.AddUser(user);
             
-            //Repo.AddUser(user);
             await DandelionAuthentication.Authenticate(HttpContext, user.Name);
             UserDto result = user;
             return result;
@@ -79,7 +68,7 @@ namespace DandelionAPI.Controllers
                 await HttpContext.SignOutAsync();
                 return Ok();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500);
             }
