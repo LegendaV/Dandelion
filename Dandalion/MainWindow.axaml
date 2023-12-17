@@ -8,7 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Width="756"
         Height="491"
-        Icon="\assets\image\logoblack.png" >
+        Icon="\assets\image\logoblack.png">
     
     <Window.Background>
         <ImageBrush Source="\assets\image\main.png"

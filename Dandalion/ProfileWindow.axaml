@@ -1,0 +1,172 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="756" d:DesignHeight="491"
+        x:Class="Dandalion.ProfileWindow"
+        Title="Dandalion"
+        WindowStartupLocation="CenterScreen"
+        Width="756"
+        Height="491"
+        Icon="\assets\image\logoblack.png">
+
+    <Window.Background>
+        <ImageBrush Source="\assets\image\generalscreen.png"
+                    Stretch="UniformToFill" />
+    </Window.Background>
+
+    <Viewbox Stretch="Uniform">
+        <Grid ColumnDefinitions="Auto,650"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Left"
+              Margin="5,30,5,30">
+            <Border Grid.Column="0"
+                    Margin="5">
+                <Border.Background>
+                    <ImageBrush Source="\assets\image\menu_panel.png"
+                                Stretch="Uniform" />
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <Image Source="\assets\image\profile_active.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,70,20,30" />
+                    <Image Source="\assets\image\home.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,35" />
+                    <Image Source="\assets\image\heart.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,35" />
+                    <Image Source="\assets\image\setting.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,70" />
+                </StackPanel>
+            </Border>
+            <StackPanel Grid.Column="1">
+                <TextBlock Text="Профиль"
+                           Foreground="White"
+                           FontSize="40"
+                           FontWeight="Bold"
+                           Margin="10, 5, 10 ,10" />
+                <Grid ColumnDefinitions="Auto,*">
+                    <Image Grid.Column="0" Source="\assets\image\avatar.png"
+                           Height="120"
+                           Width="120"
+                           Margin="10,20,0,35" />
+
+                    <Grid Grid.Column="1"
+                          RowDefinitions="Auto,Auto">
+                        <TextBlock Grid.Row="0"
+                                   HorizontalAlignment="Left"
+                                   Text="Имя пользователя"
+                                   FontWeight="SemiBold"
+                                   Foreground="White"
+                                   FontSize="25"
+                                   MaxWidth="320"
+                                   MaxHeight="80"
+                                   TextWrapping="Wrap"
+                                   Margin="25, 25,0,0" />
+                        <TextBlock Grid.Row="1"
+                                   HorizontalAlignment="Left"
+                                   Text="ОписаниеОписаниeОписание
+                                   ОписаниeОписаниеОписаниe 
+                                   ОписаниеОписаниeОписание"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   MaxWidth="320"
+                                   MaxHeight="130"
+                                   TextWrapping="Wrap"
+                                   Margin="25, 5,0,0" />
+                    </Grid>
+                </Grid>
+                <WrapPanel>
+                    <TextBlock Text="Мои игры"
+                               VerticalAlignment="Center"
+                               FontWeight="SemiBold"
+                               Foreground="White"
+                               FontSize="25"
+                               MaxWidth="320"
+                               MaxHeight="80"
+                               TextWrapping="Wrap"
+                               Margin="10, 0,0,0" />
+                    <Button Margin="25,10,0,10"
+                            Content="Добавить игру"
+                            FontWeight="Bold"
+                            FontSize="16"
+                            Background="#FF00A8"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            HorizontalAlignment="Stretch"
+                            Foreground="White"
+                            MaxWidth="160"
+                            Cursor="Hand" />
+                </WrapPanel>
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <ItemsControl>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\fon_game.png" />
+                            <TextBlock Text="Название игры"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="0,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       MaxWidth="120"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\fon_game.png" />
+                            <TextBlock Text="Название игры"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="0,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       MaxWidth="120"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\fon_game.png" />
+                            <TextBlock Text="Название игры"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="0,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       MaxWidth="120"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\fon_game.png" />
+                            <TextBlock Text="Название игры"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="0,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       MaxWidth="120"
+                                       TextWrapping="Wrap" />
+                        </StackPanel>
+                    </ItemsControl>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Viewbox>
+</Window>

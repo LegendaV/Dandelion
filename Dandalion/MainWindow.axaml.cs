@@ -27,6 +27,7 @@ public partial class MainWindow : Window
 
     private async void OnLoginButtonClickAsync(object? sender, RoutedEventArgs e)
     {
+        /*
         const string apiLogin = "https://localhost:7294/login";
         var username = this.FindControl<TextBox>("UsernameLoginTextBox")!.Text;
         var password = this.FindControl<TextBox>("PasswordLoginTextBox")!.Text;
@@ -43,15 +44,18 @@ public partial class MainWindow : Window
             "application/json");
         
         var response = await _httpClient.PostAsync(apiLogin, content);
-
-        if (response.IsSuccessStatusCode)
+        */
+        if (true)
         {
-            var stringAsync = await response.Content.ReadAsStringAsync();
-            if (!stringAsync.Contains("Пользователь не найден"))
+            //var stringAsync = await response.Content.ReadAsStringAsync();
+            if (true)
             {
                 // Обработка успешного ответа
-                var regWindow = new RegistrationWindow();
-                regWindow.Show();
+                new GeneralScreenWindow().Show();
+                new FavoriteGamesWindow().Show();
+                new ProfileWindow().Show();
+                new SettingsWindow().Show();
+                new SettingsProfileWindow().Show();
                 Close();
             }
             else

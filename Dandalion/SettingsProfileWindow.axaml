@@ -1,0 +1,163 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="756" d:DesignHeight="491"
+        x:Class="Dandalion.SettingsProfileWindow"
+        Title="Dandalion"
+        WindowStartupLocation="CenterScreen"
+        Width="756"
+        Height="491"
+        Icon="\assets\image\logoblack.png">
+
+    <Window.Background>
+        <ImageBrush Source="\assets\image\generalscreen.png"
+                    Stretch="UniformToFill" />
+    </Window.Background>
+
+    <Viewbox Stretch="Uniform">
+        <Grid ColumnDefinitions="Auto,650"
+              VerticalAlignment="Center"
+              HorizontalAlignment="Left"
+              Margin="5,30,5,30">
+            <Border Grid.Column="0"
+                    Margin="5">
+                <Border.Background>
+                    <ImageBrush Source="\assets\image\menu_panel.png"
+                                Stretch="Uniform" />
+                </Border.Background>
+                <StackPanel HorizontalAlignment="Center"
+                            VerticalAlignment="Center">
+                    <Image Source="\assets\image\profile.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,70,20,30" />
+                    <Image Source="\assets\image\home.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,35" />
+                    <Image Source="\assets\image\heart.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,35" />
+                    <Image Source="\assets\image\setting_active.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,70" />
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1">
+                <StackPanel>
+                    <TextBlock Text="Настройки"
+                               Foreground="White"
+                               FontSize="40"
+                               FontWeight="Bold"
+                               Margin="10, 5, 10 ,10" />
+                    <Grid ColumnDefinitions="225,225"
+                          Width="50"
+                          HorizontalAlignment="Left">
+                        <TextBlock Grid.Column="0"
+                                   Text="Авторизация"
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   FontSize="25"
+                                   Margin="15,25,0,0"
+                                   HorizontalAlignment="Left" />
+                        <TextBlock Grid.Column="1"
+                                   Text="Профиль"
+                                   Foreground="#FF00A8"
+                                   FontWeight="Bold"
+                                   FontSize="25"
+                                   Margin="25,25,0,0"
+                                   HorizontalAlignment="Right" />
+                    </Grid>
+                    <Border BorderBrush="White"
+                            BorderThickness="0,0,0,2"
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Left"
+                            Width="435"
+                            Margin="15,0,0,0" />
+                    <TextBlock Text="Имя"
+                               Foreground="White"
+                               FontSize="17"
+                               FontWeight="Bold"
+                               Margin="15,15,0,0" />
+                    <TextBox Margin="15,5,0,0"
+                             Watermark="имя"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Center"
+                             Width="160"
+                             BorderThickness="1"
+                             BorderBrush="White"
+                             Foreground="White"
+                             FontSize="17"
+                             Background="#07040d" />
+                    <Grid ColumnDefinitions="Auto,Auto">
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Фото"
+                                       Foreground="White"
+                                       FontSize="17"
+                                       FontWeight="Bold"
+                                       Margin="15,15,0,0" />
+                            <Image Source="\assets\image\avatar.png"
+                                   Height="120"
+                                   Width="120"
+                                   HorizontalAlignment="Left"
+                                   Margin="30,10,0,0" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1"
+                                    Margin="30,0,0,0">
+                            <TextBlock Text="Описание"
+                                       Foreground="White"
+                                       FontSize="17"
+                                       FontWeight="Bold"
+                                       Margin="15,15,0,0" />
+                            <TextBox Margin="15,5,0,0"
+                                     Watermark="описание"
+                                     Height="130"
+                                     Width="250"
+                                     HorizontalAlignment="Left"
+                                     VerticalAlignment="Center"
+                                     BorderThickness="1"
+                                     BorderBrush="White"
+                                     Foreground="White"
+                                     FontSize="17"
+                                     Background="#07040d" />
+                            
+                        </StackPanel>
+                    </Grid>
+                    <WrapPanel>
+                        <TextBlock Text="Изменить"
+                                   FontSize="12"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   TextDecorations="Underline"
+                                   Margin="15,12,0,0" />
+                        <TextBlock Text="Удалить"
+                                   FontSize="12"
+                                   Foreground="White"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"
+                                   TextDecorations="Underline"
+                                   Margin="50,12,0,0" />
+                    </WrapPanel>
+                    <WrapPanel>
+                        <Button Margin="30,20,0,10"
+                                Width="130"
+                                Content="Сохранить"
+                                FontWeight="Bold"
+                                FontSize="17"
+                                Background="#FF00A8"
+                                VerticalContentAlignment="Center"
+                                HorizontalContentAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Foreground="White"
+                                MaxWidth="160"
+                                Cursor="Hand" />
+                    </WrapPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Viewbox>
+</Window>
