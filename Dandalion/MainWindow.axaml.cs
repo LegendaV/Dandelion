@@ -51,11 +51,8 @@ public partial class MainWindow : Window
             if (true)
             {
                 // Обработка успешного ответа
-                new GeneralScreenWindow().Show();
-                new FavoriteGamesWindow().Show();
-                new ProfileWindow().Show();
-                new SettingsWindow().Show();
-                new SettingsProfileWindow().Show();
+                var generalScreenWindow = new GeneralScreenWindow();
+                generalScreenWindow.Show();
                 Close();
             }
             else

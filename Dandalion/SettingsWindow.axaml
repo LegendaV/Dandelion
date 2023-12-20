@@ -31,15 +31,24 @@
                     <Image Source="\assets\image\profile.png"
                            Height="32"
                            Width="32"
-                           Margin="20,70,20,30" />
+                           Margin="20,70,20,30"
+                           Cursor="Hand"
+                           x:Name="ProfileIcon"
+                           PointerPressed="ProfileIcon_OnPointerPressed" />
                     <Image Source="\assets\image\home.png"
                            Height="32"
                            Width="32"
-                           Margin="20,35,20,35" />
+                           Margin="20,35,20,35"
+                           Cursor="Hand"
+                           x:Name="HomeIcon"
+                           PointerPressed="HomeIcon_OnPointerPressed" />
                     <Image Source="\assets\image\heart.png"
                            Height="32"
                            Width="32"
-                           Margin="20,35,20,35" />
+                           Margin="20,35,20,35"
+                           Cursor="Hand"
+                           x:Name="HeartIcon"
+                           PointerPressed="HeartIcon_OnPointerPressed" />
                     <Image Source="\assets\image\setting_active.png"
                            Height="32"
                            Width="32"
@@ -69,7 +78,10 @@
                                    FontWeight="Bold"
                                    FontSize="25"
                                    Margin="25,25,0,0"
-                                   HorizontalAlignment="Right" />
+                                   HorizontalAlignment="Right"
+                                   Cursor="Hand"
+                                   x:Name="SettingsProfileTextBlock"
+                                   PointerPressed="SettingsProfile_OnPointerPressed"/>
 
                     </Grid>
                     <Border BorderBrush="White"

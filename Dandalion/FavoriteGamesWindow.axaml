@@ -31,11 +31,17 @@
                     <Image Source="\assets\image\profile.png"
                            Height="32"
                            Width="32"
-                           Margin="20,70,20,30" />
+                           Margin="20,70,20,30"
+                           Cursor="Hand"
+                           x:Name="ProfileIcon"
+                           PointerPressed="ProfileIcon_OnPointerPressed" />
                     <Image Source="\assets\image\home.png"
                            Height="32"
                            Width="32"
-                           Margin="20,35,20,35" />
+                           Margin="20,35,20,35"
+                           Cursor="Hand"
+                           x:Name="HomeIcon"
+                           PointerPressed="HomeIcon_OnPointerPressed"/>
                     <Image Source="\assets\image\heart_active.png"
                            Height="32"
                            Width="32"
@@ -43,7 +49,10 @@
                     <Image Source="\assets\image\setting.png"
                            Height="32"
                            Width="32"
-                           Margin="20,35,20,70" />
+                           Margin="20,35,20,70"
+                           Cursor="Hand"
+                           x:Name="SettingIcon"
+                           PointerPressed="SettingIcon_OnPointerPressed" />
                 </StackPanel>
             </Border>
             <StackPanel Grid.Column="1">
