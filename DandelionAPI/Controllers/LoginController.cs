@@ -21,15 +21,13 @@ namespace DandelionAPI.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login([FromBody] UserAuthenticationDto userDto)
         {
-            if (userDto.Email == null || userDto.Password == null)
+            if (userDto.Login == null || userDto.Password == null)
             {
                 return BadRequest($"Пользователь не найден");
             }
             var passwordHash = userDto.Password.GetHashCode();
-            Console.WriteLine(passwordHash);
-            Console.WriteLine("Slava".GetHashCode());
 
-            var person = repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Email && p.PasswordHash == passwordHash);
+            var person = repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Login && p.PasswordHash == passwordHash);
 
 
             if (person is null)
@@ -37,26 +35,24 @@ namespace DandelionAPI.Controllers
                 return BadRequest("Пользователь не найден");
             }
 
-            await DandelionAuthentication.Authenticate(HttpContext, person.Name);
-            UserDto result = person;
-            return result;
+            var accessToken = DandelionAuthentication.Authenticate(person.Login);
+            return new UserDto(person.Id, person.Name, accessToken);
         }
 
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register([FromBody] UserRegisterDto userDto)
         {
             //username passwod email
-            if (userDto == null || userDto.UserName == null || userDto.Email == null || userDto.Password == null)
+            if (userDto == null || userDto.UserName == null || userDto.UserName == null || userDto.Password == null)
             {
                 return BadRequest("Некорректные данные");
             }
-            var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.Email);
+            var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.UserName);
 
             repo.AddUser(user);
             
-            await DandelionAuthentication.Authenticate(HttpContext, user.Name);
-            UserDto result = user;
-            return result;
+            var accessToken = DandelionAuthentication.Authenticate(userDto.Login);
+            return new UserDto(user.Id, user.Name, accessToken);
         }
 
         [Authorize]

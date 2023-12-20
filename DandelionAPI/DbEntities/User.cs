@@ -8,27 +8,22 @@ namespace DandelionAPI
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
+        public string Login { get; set; }
         public int PasswordHash { get; set; }
 
         public readonly HashSet<int> Games = new HashSet<int>();
 
-        public User(string name, int passwordHash, string email)
+        public User(string name, int passwordHash, string login)
         {
             Id = id_counter++;
             Name = name;
             PasswordHash = passwordHash;
-            Email = email;
+            Login = login;
         }
 
         public void AddGameOnProfile(IGame game)
         {
             Games.Add(game.Id);
-        }
-
-        public static implicit operator UserDto(User user)
-        {
-            return new UserDto(user.Id, user.Name);
         }
     }
 }
