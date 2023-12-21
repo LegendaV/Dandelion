@@ -112,7 +112,9 @@
                             HorizontalAlignment="Stretch"
                             Foreground="White"
                             MaxWidth="160"
-                            Cursor="Hand" />
+                            Cursor="Hand"
+                            x:Name="AddGame"
+                            Click="AddGame_OnClick"/>
                 </WrapPanel>
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
                     <ItemsControl>
