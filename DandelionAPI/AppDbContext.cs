@@ -9,7 +9,7 @@ namespace DandelionAPI
     {
         public AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : base(dbContextOptions)
         {
-
+            
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)

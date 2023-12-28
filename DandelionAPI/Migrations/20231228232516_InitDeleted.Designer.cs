@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DandelionAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231228213852_g")]
-    partial class g
+    [Migration("20231228232516_InitDeleted")]
+    partial class InitDeleted
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

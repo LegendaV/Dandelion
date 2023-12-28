@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DandelionAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231228213726_Init")]
+    [Migration("20231228232546_Init")]
     partial class Init
     {
         /// <inheritdoc />
