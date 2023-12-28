@@ -2,14 +2,12 @@
 {
     public class GameDto
     {
-        private static int globalId = 0;
+        public int Id { get; set; }
+        public int OwnerId { get; set; }
 
-        public int Id { get; }
-        public readonly List<int> OwnersId;
-
-        public string Name { get; private set; }
-        public string Description { get; private set; }
-        public string URL { get; private set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string URL { get; set; }
 
     }
 }

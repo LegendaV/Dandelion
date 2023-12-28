@@ -9,11 +9,11 @@ namespace DandelionAPI
         public int Id { get; set; }
         public string Name { get; set; }
         public string Login { get; set; }
-        public int PasswordHash { get; set; }
+        public string PasswordHash { get; set; }
 
         public readonly HashSet<int> Games = new HashSet<int>();
 
-        public User(string name, int passwordHash, string login)
+        public User(string name, string passwordHash, string login)
         {
             Id = id_counter++;
             Name = name;

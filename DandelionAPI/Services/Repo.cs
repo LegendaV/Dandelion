@@ -11,10 +11,6 @@
 
         public IEnumerable<User> GetAllUsers()
         {
-            foreach (var item in appDbContext.Users)
-            {
-                Console.WriteLine($"{item.Name}, {item.Id}, {item.PasswordHash}");
-            };
             return appDbContext.Users;
         }
 

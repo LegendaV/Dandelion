@@ -12,14 +12,14 @@ namespace DandelionAPI
 {
     public static class DandelionAuthentication
     {
-        private static readonly string key = "DandelionKey";
+        private static readonly string key = "DandelionKey_DandelionKey_DandelionKey_DandelionKey_DandelionKey";
         public static string Authenticate(string login)
         {
             var claims = new List<Claim> { new Claim(ClaimTypes.Name, login) };
             var jwt = new JwtSecurityToken(
-            claims: claims,
-            expires: DateTime.UtcNow.Add(TimeSpan.FromHours(5)),
-            signingCredentials: new SigningCredentials(GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
+                claims: claims,
+                expires: DateTime.UtcNow.Add(TimeSpan.FromHours(5)),
+                signingCredentials: new SigningCredentials(GetSymmetricSecurityKey(), SecurityAlgorithms.HmacSha256));
 
             return new JwtSecurityTokenHandler().WriteToken(jwt);
         }

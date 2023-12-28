@@ -8,11 +8,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace DandelionAPI
+namespace DandelionAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231203092651_init2")]
-    partial class init2
+    [Migration("20231224095020_InitDB")]
+    partial class InitDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace DandelionAPI
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Login")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -40,8 +40,9 @@ namespace DandelionAPI
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PasswordHash")
-                        .HasColumnType("integer");
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
