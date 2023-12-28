@@ -1,5 +1,6 @@
 ﻿using DandelionAPI;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions.Configuration;
 
 namespace DandelionAPI
@@ -8,7 +9,7 @@ namespace DandelionAPI
     {
         public AppDbContext(DbContextOptions<AppDbContext> dbContextOptions) : base(dbContextOptions)
         {
-            
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
@@ -17,5 +18,6 @@ namespace DandelionAPI
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Game> Games { get; set; }
     }
 }

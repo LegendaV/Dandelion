@@ -11,7 +11,7 @@ namespace DandelionAPI
         public string Login { get; set; }
         public string PasswordHash { get; set; }
 
-        public readonly HashSet<int> Games = new HashSet<int>();
+        public List<Game> Games { get; set; } = new();
 
         public User(string name, string passwordHash, string login)
         {
@@ -19,11 +19,6 @@ namespace DandelionAPI
             Name = name;
             PasswordHash = passwordHash;
             Login = login;
-        }
-
-        public void AddGameOnProfile(IGame game)
-        {
-            Games.Add(game.Id);
         }
     }
 }

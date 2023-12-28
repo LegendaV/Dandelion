@@ -10,7 +10,12 @@ namespace DandelionAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme);
+            builder.Services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            });
+
             builder.Services.AddAuthorization();
           
             builder.Services.AddDbContext<AppDbContext>((options) =>
