@@ -51,8 +51,9 @@ namespace DandelionAPI.Controllers
             var user = new User(userDto.UserName, PasswordHash.GetHash(userDto.Password), userDto.UserName);
 
             repo.AddUser(user);
-            
+
             var accessToken = DandelionAuthentication.Authenticate(userDto.Login);
+
             return new UserDto(user.Id, user.Name, accessToken);
         }
 
