@@ -7,7 +7,7 @@ namespace DandelionAPI
         private static int globalId = 0;
 
         public int Id { get; }
-        public readonly int OwnerID;
+        public readonly List<string> Owners;
 
         public string Name { get; private set; }
         public string Description { get; private set; }
