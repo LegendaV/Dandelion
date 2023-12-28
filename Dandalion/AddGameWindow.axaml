@@ -95,31 +95,29 @@
                                          BorderThickness="2"
                                          BorderBrush="White"
                                          FontSize="17"
-                                         Background="#07040d" />
+                                         Background="#07040d"
+                                         x:Name="GameName"/>
                             </WrapPanel>
                             <WrapPanel>
-                                <TextBlock Text="Обложка"
+                                <TextBlock Text="Описание"
                                            Foreground="White"
                                            FontSize="17"
                                            FontWeight="Bold"
                                            Margin="15,25,20,0"
                                            VerticalAlignment="Top" />
-                                <Border Width="200"
-                                        Height="180"
-                                        BorderBrush="White"
-                                        BorderThickness="2"
-                                        Margin="52,20,0,0">
-                                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                                        <Button Content="+"
-                                                FontSize="70"
-                                                Foreground="White"
-                                                HorizontalAlignment="Center" />
-                                        <TextBlock Text="Загрузить обложку"
-                                                   FontSize="17"
-                                                   Foreground="White"
-                                                   Margin="0,-10,0,0" />
-                                    </StackPanel>
-                                </Border>
+                                <TextBox Margin="45,15,0,0"
+                                         Watermark="описание"
+                                         HorizontalAlignment="Left"
+                                         VerticalAlignment="Center"
+                                         HorizontalContentAlignment="Left"
+                                         VerticalContentAlignment="Center"
+                                         Width="200"
+                                         Height="135"
+                                         BorderThickness="2"
+                                         BorderBrush="White"
+                                         FontSize="17"
+                                         Background="#07040d"
+                                         x:Name="Description"/>
                             </WrapPanel>
                         </StackPanel>
                         <WrapPanel Grid.Row="0"
@@ -182,29 +180,6 @@
                                 VerticalAlignment="Top"
                                 HorizontalAlignment="Left"
                                 Margin="0,10,0,0">
-                        <TextBlock Text="Описание"
-                                   Foreground="White"
-                                   FontSize="17"
-                                   FontWeight="Bold"
-                                   Margin="15,15,0,0"
-                                   VerticalAlignment="Top" />
-                        <TextBox Margin="65,15,0,0"
-                                 Watermark="описание"
-                                 HorizontalAlignment="Left"
-                                 VerticalAlignment="Center"
-                                 HorizontalContentAlignment="Left"
-                                 VerticalContentAlignment="Center"
-                                 Width="485"
-                                 Height="60"
-                                 BorderThickness="2"
-                                 BorderBrush="White"
-                                 FontSize="17"
-                                 Background="#07040d" />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal"
-                                VerticalAlignment="Top"
-                                HorizontalAlignment="Left"
-                                Margin="0,10,0,0">
                         <TextBlock Text="Ссылка на GitHub"
                                    Width="100"
                                    TextAlignment="Center"
@@ -225,8 +200,23 @@
                                  BorderThickness="2"
                                  BorderBrush="White"
                                  FontSize="17"
-                                 Background="#07040d" />
+                                 Background="#07040d"
+                                 x:Name="UrlGitHub"/>
                     </StackPanel>
+                    <Button Margin="220,60,0,10"
+                            Width="200"
+                            Height="40"
+                            Content="Добавить игру"
+                            FontWeight="Bold"
+                            FontSize="17"
+                            Background="#FF00A8"
+                            VerticalContentAlignment="Center"
+                            HorizontalContentAlignment="Center"
+                            HorizontalAlignment="Left"
+                            Foreground="White"
+                            Cursor="Hand"
+                            x:Name="AddGameButton"
+                            Click="AddGameButton_OnClick"/>
                 </StackPanel>
             </Border>
         </Grid>

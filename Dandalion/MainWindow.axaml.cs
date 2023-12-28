@@ -3,6 +3,7 @@ using Avalonia.Interactivity;
 using System.Net.Http;
 using System.Text;
 using Avalonia.Input;
+using Avalonia.Layout;
 using Newtonsoft.Json;
 
 namespace Dandalion;
@@ -10,6 +11,8 @@ namespace Dandalion;
 public partial class MainWindow : Window
 {
     private readonly HttpClient _httpClient = new HttpClient();
+    
+    private string token { get; set; }
 
     public MainWindow()
     {
@@ -25,44 +28,55 @@ public partial class MainWindow : Window
         Close();
     }
 
+    public static void ShareToken()
+    {
+        
+    }
     private async void OnLoginButtonClickAsync(object? sender, RoutedEventArgs e)
     {
-        /*
         const string apiLogin = "https://localhost:7294/login";
         var username = this.FindControl<TextBox>("UsernameLoginTextBox")!.Text;
         var password = this.FindControl<TextBox>("PasswordLoginTextBox")!.Text;
 
         var requestBody = new
         {
-            email = username,
+            login = username,
             password = password
         };
 
         var content = new StringContent(
-            JsonConvert.SerializeObject(requestBody), 
+            JsonConvert.SerializeObject(requestBody),
             Encoding.UTF8,
             "application/json");
-        
+
         var response = await _httpClient.PostAsync(apiLogin, content);
-        */
-        if (true)
+        var stringAsync = await response.Content.ReadAsStringAsync();
+        if (response.IsSuccessStatusCode)
         {
-            //var stringAsync = await response.Content.ReadAsStringAsync();
-            if (true)
+            var generalScreenWindow = new GeneralScreenWindow();
+            generalScreenWindow.Show();
+            Close();
+        }
+        else if (stringAsync == "Пользователь не найден")
+        {
+            var window = new Window
             {
-                // Обработка успешного ответа
-                var generalScreenWindow = new GeneralScreenWindow();
-                generalScreenWindow.Show();
-                Close();
-            }
-            else
-            {
-                // Обработка ошибки входа
-            }
+                Title = "Error",
+                Width = 300,
+                Height = 100,
+                Content = new TextBlock
+                {
+                    Text = "Пользователь не найден",
+                    FontSize = 20,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    VerticalAlignment = VerticalAlignment.Center
+                }
+            };
+            window.Show();
         }
         else
         {
-            // Обработка других ошибок HTTP
+            //другая ошибка
         }
     }
 }

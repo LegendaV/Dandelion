@@ -1,12 +1,18 @@
-﻿using Avalonia;
+﻿using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Input;
+using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
+using Newtonsoft.Json;
 
 namespace Dandalion;
 
 public partial class AddGameWindow : Window
 {
+    private readonly HttpClient _httpClient = new HttpClient();
     public AddGameWindow()
     {
         InitializeComponent();
@@ -14,6 +20,7 @@ public partial class AddGameWindow : Window
         this.FindControl<Image>("HomeIcon")!.PointerPressed += HomeIcon_OnPointerPressed;
         this.FindControl<Image>("HeartIcon")!.PointerPressed += HeartIcon_OnPointerPressed;
         this.FindControl<Image>("SettingIcon")!.PointerPressed += SettingIcon_OnPointerPressed;
+        this.FindControl<Button>("AddGameButton")!.Click += AddGameButton_OnClick;
     }
     
     private void ProfileIcon_OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -50,5 +57,28 @@ public partial class AddGameWindow : Window
         settingsWindow.Show();
         Close();
         e.Handled = true;
+    }
+
+    private async void AddGameButton_OnClick(object? sender, RoutedEventArgs e)
+    {
+        var id = 0;
+        var gameName = GameName.Text;
+        var description = Description.Text;
+        var urlGitHub = UrlGitHub.Text;
+        var apiLogin = $"https://localhost:7294/{id}/game";
+        var requestBody = new
+        {
+            id = id,
+            name = gameName,
+            description = description,
+            url = urlGitHub
+        };
+
+        var content = new StringContent(
+            JsonConvert.SerializeObject(requestBody),
+            Encoding.UTF8,
+            "application/json");
+
+        var response = await _httpClient.PostAsync(apiLogin, content);
     }
 }

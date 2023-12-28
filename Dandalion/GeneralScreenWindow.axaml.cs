@@ -41,4 +41,9 @@ public partial class GeneralScreenWindow : Window
         Close();
         e.Handled = true;
     }
+
+    private void PlayGame_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        throw new System.NotImplementedException();
+    }
 }

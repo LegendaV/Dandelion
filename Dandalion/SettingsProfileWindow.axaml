@@ -15,6 +15,15 @@
                     Stretch="UniformToFill" />
     </Window.Background>
 
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+    </Window.Styles>
+
     <Viewbox Stretch="Uniform">
         <Grid ColumnDefinitions="Auto,650"
               VerticalAlignment="Center"
@@ -74,7 +83,7 @@
                                    HorizontalAlignment="Left"
                                    Cursor="Hand"
                                    x:Name="SettingsTextBlock"
-                                   PointerPressed="Settings_OnPointerPressed"/>
+                                   PointerPressed="Settings_OnPointerPressed" />
                         <TextBlock Grid.Column="1"
                                    Text="Профиль"
                                    Foreground="#FF00A8"
@@ -101,7 +110,6 @@
                              Width="160"
                              BorderThickness="1"
                              BorderBrush="White"
-                             Foreground="White"
                              FontSize="17"
                              Background="#07040d" />
                     <Grid ColumnDefinitions="Auto,Auto">
@@ -132,10 +140,9 @@
                                      VerticalAlignment="Center"
                                      BorderThickness="1"
                                      BorderBrush="White"
-                                     Foreground="White"
                                      FontSize="17"
                                      Background="#07040d" />
-                            
+
                         </StackPanel>
                     </Grid>
                     <WrapPanel>

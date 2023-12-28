@@ -14,6 +14,15 @@
         <ImageBrush Source="\assets\image\generalscreen.png"
                     Stretch="UniformToFill" />
     </Window.Background>
+    
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+    </Window.Styles>
 
     <Viewbox Stretch="Uniform">
         <Grid ColumnDefinitions="Auto,650"
@@ -102,7 +111,6 @@
                              Width="160"
                              BorderThickness="1"
                              BorderBrush="White"
-                             Foreground="White"
                              FontSize="17"
                              Background="#07040d" />
                     <TextBlock Text="Email"
@@ -117,7 +125,6 @@
                              Width="160"
                              BorderThickness="1"
                              BorderBrush="White"
-                             Foreground="White"
                              FontSize="17"
                              Background="#07040d" />
                     <TextBlock Text="Пароль"
@@ -132,7 +139,6 @@
                              Width="160"
                              BorderThickness="1"
                              BorderBrush="White"
-                             Foreground="White"
                              FontSize="17"
                              Background="#07040d" />
                     <TextBox Margin="15,5,0,0"
@@ -142,7 +148,6 @@
                              Width="160"
                              BorderThickness="1"
                              BorderBrush="White"
-                             Foreground="White"
                              FontSize="17"
                              Background="#07040d" />
                     <WrapPanel>
