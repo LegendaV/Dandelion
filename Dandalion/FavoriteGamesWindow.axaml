@@ -72,33 +72,7 @@
                                     Width="120"
                                     Height="200">
                             <Image Source="\assets\image\fon_game.png" />
-                            <TextBlock Text="Название игры"
-                                       FontSize="15"
-                                       FontWeight="SemiBold"
-                                       Foreground="White"
-                                       Margin="0,5,0,0"
-                                       HorizontalAlignment="Center"
-                                       MaxWidth="120"
-                                       TextWrapping="Wrap" />
-                        </StackPanel>
-                        <StackPanel Margin="10"
-                                    Width="120"
-                                    Height="200">
-                            <Image Source="\assets\image\fon_game.png" />
-                            <TextBlock Text="Название игры"
-                                       FontSize="15"
-                                       FontWeight="SemiBold"
-                                       Foreground="White"
-                                       Margin="0,5,0,0"
-                                       HorizontalAlignment="Center"
-                                       MaxWidth="120"
-                                       TextWrapping="Wrap" />
-                        </StackPanel>
-                        <StackPanel Margin="10"
-                                    Width="120"
-                                    Height="200">
-                            <Image Source="\assets\image\fon_game.png" />
-                            <TextBlock Text="Название игры"
+                            <TextBlock Text="Избранная игра"
                                        FontSize="15"
                                        FontWeight="SemiBold"
                                        Foreground="White"

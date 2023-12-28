@@ -1,5 +1,6 @@
 ﻿using DandelionAPI;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations.Operations;
 using Microsoft.Extensions.Configuration;
 
 namespace DandelionAPI

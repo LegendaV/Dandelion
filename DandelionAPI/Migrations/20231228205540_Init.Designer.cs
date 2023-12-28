@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DandelionAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20231224095020_InitDB")]
-    partial class InitDB
+    [Migration("20231228205540_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
