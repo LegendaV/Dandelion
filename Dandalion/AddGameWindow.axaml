@@ -94,13 +94,13 @@
                                            Foreground="White"
                                            FontSize="17"
                                            FontWeight="Bold"
-                                           Margin="15,35,20,0"
+                                           Margin="15,25,20,0"
                                            VerticalAlignment="Top" />
                                 <Border Width="200"
-                                        Height="200"
+                                        Height="180"
                                         BorderBrush="White"
                                         BorderThickness="2"
-                                        Margin="52,30,0,0">
+                                        Margin="52,20,0,0">
                                     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Button Content="+"
                                                 FontSize="70"
@@ -171,18 +171,6 @@
                                          Foreground="White"
                                          FontSize="17"
                                          Background="#07040d" />
-                                <TextBox Margin="15,5,0,0"
-                                         Watermark="участник 1"
-                                         HorizontalAlignment="Left"
-                                         VerticalAlignment="Center"
-                                         VerticalContentAlignment="Center"
-                                         Width="160"
-                                         Height="40"
-                                         BorderThickness="2"
-                                         BorderBrush="White"
-                                         Foreground="White"
-                                         FontSize="17"
-                                         Background="#07040d" />
                             </StackPanel>
                         </WrapPanel>
                     </Grid>
@@ -203,7 +191,34 @@
                                  HorizontalContentAlignment="Left"
                                  VerticalContentAlignment="Center"
                                  Width="485"
-                                 Height="115"
+                                 Height="60"
+                                 BorderThickness="2"
+                                 BorderBrush="White"
+                                 Foreground="White"
+                                 FontSize="17"
+                                 Background="#07040d" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Left"
+                                Margin="0,10,0,0">
+                        <TextBlock Text="Ссылка на GitHub"
+                                   Width="100"
+                                   TextAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Foreground="White"
+                                   FontSize="17"
+                                   FontWeight="Bold"
+                                   Margin="10,15,0,0"
+                                   VerticalAlignment="Top" />
+                        <TextBox Margin="55,15,0,0"
+                                 Watermark="ссылка на GitHub"
+                                 HorizontalAlignment="Left"
+                                 VerticalAlignment="Center"
+                                 HorizontalContentAlignment="Left"
+                                 VerticalContentAlignment="Center"
+                                 Width="485"
+                                 Height="45"
                                  BorderThickness="2"
                                  BorderBrush="White"
                                  Foreground="White"

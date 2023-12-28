@@ -81,7 +81,7 @@
                                    HorizontalAlignment="Right"
                                    Cursor="Hand"
                                    x:Name="SettingsProfileTextBlock"
-                                   PointerPressed="SettingsProfile_OnPointerPressed"/>
+                                   PointerPressed="SettingsProfile_OnPointerPressed" />
 
                     </Grid>
                     <Border BorderBrush="White"
@@ -157,21 +157,27 @@
                                 HorizontalAlignment="Left"
                                 Foreground="White"
                                 MaxWidth="160"
-                                Cursor="Hand"/>
+                                Cursor="Hand" />
                         <TextBlock Text="Выйти"
                                    FontSize="17"
                                    Foreground="White"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    TextDecorations="Underline"
-                                   Margin="40,12,0,0"/>
+                                   Margin="40,12,0,0"
+                                   Cursor="Hand"
+                                   x:Name="LogoutTextBlock"
+                                   PointerPressed="LogoutTextBlock_OnPointerPressed" />
                         <TextBlock Text="Удалить аккаунт"
                                    Foreground="White"
                                    FontSize="17"
                                    HorizontalAlignment="Center"
                                    VerticalAlignment="Center"
                                    TextDecorations="Underline"
-                                   Margin="30,12,0,0"/>
+                                   Margin="30,12,0,0"
+                                   Cursor="Hand"
+                                   x:Name="DeleteAccountTextBlock"
+                                   PointerPressed="DeleteAccountTextBlock_OnPointerPressed" />
                     </WrapPanel>
                 </StackPanel>
             </Border>

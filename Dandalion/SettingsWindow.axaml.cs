@@ -14,6 +14,8 @@ public partial class SettingsWindow : Window
         this.FindControl<Image>("HomeIcon")!.PointerPressed += HomeIcon_OnPointerPressed;
         this.FindControl<Image>("HeartIcon")!.PointerPressed += HeartIcon_OnPointerPressed;
         this.FindControl<TextBlock>("SettingsProfileTextBlock")!.PointerPressed += SettingsProfile_OnPointerPressed;
+        this.FindControl<TextBlock>("LogoutTextBlock")!.PointerPressed += LogoutTextBlock_OnPointerPressed;
+        this.FindControl<TextBlock>("DeleteAccountTextBlock")!.PointerPressed += DeleteAccountTextBlock_OnPointerPressed;
     }
     
     private void ProfileIcon_OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -48,6 +50,24 @@ public partial class SettingsWindow : Window
         if (!Equals(sender, this.FindControl<TextBlock>("SettingsProfileTextBlock"))) return;
         var settingsProfileWindow = new SettingsProfileWindow();
         settingsProfileWindow.Show();
+        Close();
+        e.Handled = true;
+    }
+
+    private void LogoutTextBlock_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (!Equals(sender, this.FindControl<TextBlock>("LogoutTextBlock"))) return;
+        var mainWindow= new MainWindow();
+        mainWindow.Show();
+        Close();
+        e.Handled = true;
+    }
+
+    private void DeleteAccountTextBlock_OnPointerPressed(object? sender, PointerPressedEventArgs e)
+    {
+        if (!Equals(sender, this.FindControl<TextBlock>("DeleteAccountTextBlock"))) return;
+        var mainWindow= new MainWindow();
+        mainWindow.Show();
         Close();
         e.Handled = true;
     }
