@@ -43,7 +43,6 @@ namespace DandelionAPI
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();

@@ -7,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace DandelionAPI
+namespace DandelionAPI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
     partial class AppDbContextModelSnapshot : ModelSnapshot
@@ -37,8 +37,9 @@ namespace DandelionAPI
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("PasswordHash")
-                        .HasColumnType("integer");
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
