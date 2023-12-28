@@ -15,6 +15,15 @@
                     Stretch="UniformToFill" />
     </Window.Background>
 
+    <Window.Styles>
+        <Style Selector="TextBox">
+            <Setter Property="Foreground" Value="White" />
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="Foreground" Value="Black" />
+        </Style>
+    </Window.Styles>
+
     <Viewbox Stretch="Uniform">
         <Grid ColumnDefinitions="Auto,650"
               VerticalAlignment="Center"
@@ -34,7 +43,7 @@
                            Margin="20,70,20,30"
                            Cursor="Hand"
                            x:Name="ProfileIcon"
-                           PointerPressed="ProfileIcon_OnPointerPressed"/>
+                           PointerPressed="ProfileIcon_OnPointerPressed" />
                     <Image Source="\assets\image\home.png"
                            Height="32"
                            Width="32"
@@ -85,7 +94,6 @@
                                          Height="40"
                                          BorderThickness="2"
                                          BorderBrush="White"
-                                         Foreground="White"
                                          FontSize="17"
                                          Background="#07040d" />
                             </WrapPanel>
@@ -132,11 +140,10 @@
                                          Height="40"
                                          BorderThickness="2"
                                          BorderBrush="White"
-                                         Foreground="White"
                                          FontSize="17"
                                          Background="#07040d" />
                                 <TextBox Margin="15,5,0,5"
-                                         Watermark="участник 1"
+                                         Watermark="участник 2"
                                          HorizontalAlignment="Left"
                                          VerticalAlignment="Center"
                                          VerticalContentAlignment="Center"
@@ -144,11 +151,10 @@
                                          Height="40"
                                          BorderThickness="2"
                                          BorderBrush="White"
-                                         Foreground="White"
                                          FontSize="17"
                                          Background="#07040d" />
                                 <TextBox Margin="15,5,0,5"
-                                         Watermark="участник 1"
+                                         Watermark="участник 3"
                                          HorizontalAlignment="Left"
                                          VerticalAlignment="Center"
                                          VerticalContentAlignment="Center"
@@ -156,11 +162,10 @@
                                          Height="40"
                                          BorderThickness="2"
                                          BorderBrush="White"
-                                         Foreground="White"
                                          FontSize="17"
                                          Background="#07040d" />
                                 <TextBox Margin="15,5,0,0"
-                                         Watermark="участник 1"
+                                         Watermark="участник 4"
                                          HorizontalAlignment="Left"
                                          VerticalAlignment="Center"
                                          VerticalContentAlignment="Center"
@@ -168,7 +173,6 @@
                                          Height="40"
                                          BorderThickness="2"
                                          BorderBrush="White"
-                                         Foreground="White"
                                          FontSize="17"
                                          Background="#07040d" />
                             </StackPanel>
@@ -194,7 +198,6 @@
                                  Height="60"
                                  BorderThickness="2"
                                  BorderBrush="White"
-                                 Foreground="White"
                                  FontSize="17"
                                  Background="#07040d" />
                     </StackPanel>
@@ -221,7 +224,6 @@
                                  Height="45"
                                  BorderThickness="2"
                                  BorderBrush="White"
-                                 Foreground="White"
                                  FontSize="17"
                                  Background="#07040d" />
                     </StackPanel>
