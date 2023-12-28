@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
+using DandelionAPI.Services;
 
 namespace DandelionAPI.Controllers
 {
@@ -25,7 +26,7 @@ namespace DandelionAPI.Controllers
             {
                 return BadRequest($"Пользователь не найден");
             }
-            var passwordHash = userDto.Password.GetHashCode();
+            var passwordHash = PasswordHash.GetHash(userDto.Password);
 
             var person = repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Login && p.PasswordHash == passwordHash);
 
@@ -47,7 +48,7 @@ namespace DandelionAPI.Controllers
             {
                 return BadRequest("Некорректные данные");
             }
-            var user = new User(userDto.UserName, userDto.Password.GetHashCode(), userDto.UserName);
+            var user = new User(userDto.UserName, PasswordHash.GetHash(userDto.Password), userDto.UserName);
 
             repo.AddUser(user);
             
