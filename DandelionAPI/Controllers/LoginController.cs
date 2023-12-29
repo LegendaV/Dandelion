@@ -7,6 +7,7 @@ using System;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using DandelionAPI.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace DandelionAPI.Controllers
 {
@@ -28,7 +29,7 @@ namespace DandelionAPI.Controllers
             }
             var passwordHash = PasswordHash.GetHash(userDto.Password);
 
-            var person = repo.GetAllUsers().FirstOrDefault(p => p.Name == userDto.Login && p.PasswordHash == passwordHash);
+            var person = repo.GetAllUsers().FirstOrDefault(p => p.Login == userDto.Login && p.PasswordHash == passwordHash);
 
 
             if (person is null)
@@ -43,7 +44,10 @@ namespace DandelionAPI.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register([FromBody] UserRegisterDto userDto)
         {
-            //username passwod email
+            if (repo.GetAllUsers().FirstOrDefault(p => p.Login == userDto.Login) != null)
+            {
+                return BadRequest("Пользователь с таким логином уже существует");
+            }
             if (userDto == null || userDto.UserName == null || userDto.UserName == null || userDto.Password == null)
             {
                 return BadRequest("Некорректные данные");

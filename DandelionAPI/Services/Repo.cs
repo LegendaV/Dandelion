@@ -1,4 +1,6 @@
-﻿namespace DandelionAPI
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace DandelionAPI
 {
     public class Repo
     {
@@ -22,7 +24,24 @@
 
         public IEnumerable<Game> GetAllGames()
         {
-            yield return new Game(1, "", "", "");
+            return appDbContext.Games;
+        }
+
+        public void AddGame(Game game)
+        {
+            appDbContext.Games.AddRange(game);
+            appDbContext.SaveChanges();
+        }
+
+        public void GetGameOnProfille(User user, Game game)
+        {
+            user.Games.Add(game);
+            appDbContext.SaveChanges();
+        }
+
+        public List<User> GetUsersWithGame()
+        {
+            return appDbContext.Users.Include(g => g.Games).ToList();
         }
     }
 }

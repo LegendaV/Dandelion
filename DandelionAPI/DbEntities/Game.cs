@@ -1,4 +1,5 @@
-﻿using DandelionAPI.Interface;
+﻿using DandelionAPI.ClientDto;
+using DandelionAPI.Interface;
 
 namespace DandelionAPI
 {
@@ -6,19 +7,28 @@ namespace DandelionAPI
     {
         private static int globalId = 0;
 
-        public int Id { get; }
-        public readonly List<string> Owners;
+        public int Id { get; private set; }
+        public int OwnerId { get; private set; }
+        public List<User> Users { get; set; } = new();
 
         public string Name { get; private set; }
         public string Description { get; private set; }
-        public string URL { get; private set; }
+        public string Url { get; private set; }
+        public string CommitSha { get; private set; }
 
-        public Game(int ownerId, string name, string description, string url)
+        public Game(int ownerId, string name, string description, string url, string commitSha)
         {
             Id = globalId++;
+            OwnerId = ownerId;
             Name = name;
             Description = description;
-            URL = url;
+            Url = url;
+            CommitSha = commitSha;
+        }
+
+        public static implicit operator Game(GameDto dto)
+        {
+            return new Game(dto.OwnerId, dto.Name, dto.Description, dto.Url, dto.CommitSha);
         }
     }
 }
