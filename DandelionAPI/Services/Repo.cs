@@ -38,5 +38,10 @@ namespace DandelionAPI
             user.Games.Add(game);
             appDbContext.SaveChanges();
         }
+
+        public List<User> GetUsersWithGame()
+        {
+            return appDbContext.Users.Include(g => g.Games).ToList();
+        }
     }
 }

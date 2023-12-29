@@ -44,7 +44,6 @@ namespace DandelionAPI.Controllers
         [HttpPost("register")]
         public async Task<ActionResult<UserDto>> Register([FromBody] UserRegisterDto userDto)
         {
-            //username passwod email
             if (repo.GetAllUsers().FirstOrDefault(p => p.Login == userDto.Login) != null)
             {
                 return BadRequest("Пользователь с таким логином уже существует");

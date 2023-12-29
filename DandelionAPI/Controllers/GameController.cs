@@ -18,7 +18,7 @@ namespace DandelionAPI.Controllers
         [Authorize]
         public async Task<ActionResult<List<GameDto>>> GetUserGame(int id)
         {
-            var user = repo.GetAllUsers().Where(u => u.Id == id).FirstOrDefault();
+            var user = repo.GetUsersWithGame().Where(u => u.Id == id).FirstOrDefault();
             if (user == null || this.User.Identity.Name != user.Login)
             {
                 return BadRequest("Пользователь не найден");
@@ -39,6 +39,10 @@ namespace DandelionAPI.Controllers
             if (game == null)
             {
                 return BadRequest("Игра не найдена");
+            }
+            if (user.Games.Contains(game))
+            {
+                return Ok();
             }
 
             repo.GetGameOnProfille(user, game);
