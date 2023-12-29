@@ -13,6 +13,7 @@ public partial class GeneralScreenWindow : Window
         this.FindControl<Image>("ProfileIcon")!.PointerPressed += ProfileIcon_OnPointerPressed;
         this.FindControl<Image>("HeartIcon")!.PointerPressed += HeartIcon_OnPointerPressed;
         this.FindControl<Image>("SettingIcon")!.PointerPressed += SettingIcon_OnPointerPressed;
+        this.FindControl<TextBlock>("PlayGame")!.PointerPressed += PlayGame_OnPointerPressed;
     }
 
     private void ProfileIcon_OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -44,6 +45,9 @@ public partial class GeneralScreenWindow : Window
 
     private void PlayGame_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
+        //if (!Equals(sender, this.FindControl<TextBlock>("PlayGame"))) return;
+        //запуск игры
         throw new System.NotImplementedException();
+        //e.Handled = true;
     }
 }
