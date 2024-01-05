@@ -9,6 +9,7 @@
         public string Description { get; set; }
         public string Url { get; set; }
         public string CommitSha { get; set; }
+        public string ExeFileName { get; set; }
 
         public static implicit operator GameDto(Game game)
         {
@@ -17,7 +18,8 @@
                 Name = game.Name,
                 Description = game.Description,
                 Url = game.Url,
-                CommitSha = game.CommitSha };
+                CommitSha = game.CommitSha,
+                ExeFileName = game.ExeFileName};
         }
     }
 }

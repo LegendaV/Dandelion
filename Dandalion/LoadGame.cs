@@ -7,7 +7,7 @@ namespace Dandalion
     public static class GameLoader
     {
         private static string outputFolder = "Games";
-        public static void Load(string repositoryUrl = "https://github.com/LegendaV/DiskUsage", string commitSha = "f916cab7e86043b471173d74648f155b25b757b7")
+        public static void Load(string repositoryUrl, string commitSha)
         {
             string downloadUrl = $"{repositoryUrl}/archive/{commitSha}.zip";
 
