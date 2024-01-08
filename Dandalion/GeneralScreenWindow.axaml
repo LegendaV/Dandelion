@@ -82,40 +82,30 @@
                                        Margin="10,5,0,0"
                                        HorizontalAlignment="Center"
                                        Width="150"
-                                       x:Name="PlayGame"
-                                       PointerPressed="PlayGame_OnPointerPressed" />
+                                       x:Name="LoadGameLAD"
+                                       Cursor="Hand"
+                                       PointerPressed="LoadGameLAD_OnPointerPressed" />
+                        </StackPanel>
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\fon_game.png"
+                                   Width="120"
+                                   Height="180" />
+                            <TextBlock Text="HEX"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="60,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       Width="150"
+                                       x:Name="LoadGameHEX"
+                                       Cursor="Hand"
+                                       PointerPressed="LoadGameHEX_OnPointerPressed" />
                         </StackPanel>
                     </ItemsControl>
                 </ScrollViewer>
             </StackPanel>
-            <!--
-                <ListBox Classes="movies"
-                         IsVisible="{Binding InitializationNotifier.IsCompleted, Mode=TwoWay}"
-                         ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                         Items="{Binding MyItems}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="*"/>
-                                    <RowDefinition Height="Auto" MinHeight="48"/>
-                                </Grid.RowDefinitions>
-                                <Image Grid.Row="0" Stretch="UniformToFill" Source="{Binding Poster}"/>
-                                <Border Grid.Row="1" Classes="title">
-                                    <Grid ColumnDefinitions="*" Margin="4">
-                                        <TextBlock FontSize="18" Text="{Binding Name}" />
-                                    </Grid>
-                                </Border>
-                            </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                    <ListBox.ItemsPanel>
-                        <ItemsPanelTemplate>
-                            <WrapPanel ItemWidth="200" ItemHeight="300" Orientation="Horizontal"/>
-                        </ItemsPanelTemplate>
-                    </ListBox.ItemsPanel>
-                </ListBox>
-                -->
         </Grid>
     </Viewbox>
 </Window>

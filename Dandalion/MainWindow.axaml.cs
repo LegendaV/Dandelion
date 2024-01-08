@@ -13,7 +13,7 @@ public partial class MainWindow : Window
     private readonly HttpClient _httpClient = new HttpClient();
     
     private string token { get; set; }
-
+    
     public MainWindow()
     {
         InitializeComponent();
@@ -53,8 +53,8 @@ public partial class MainWindow : Window
         var stringAsync = await response.Content.ReadAsStringAsync();
         if (response.IsSuccessStatusCode)
         {
-            var generalScreenWindow = new GeneralScreenWindow();
-            generalScreenWindow.Show();
+            var profileWindow = new ProfileWindow();
+            profileWindow.Show();
             Close();
         }
         else if (stringAsync == "Пользователь не найден")
@@ -73,10 +73,6 @@ public partial class MainWindow : Window
                 }
             };
             window.Show();
-        }
-        else
-        {
-            //другая ошибка
         }
     }
 }

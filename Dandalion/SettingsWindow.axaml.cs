@@ -30,18 +30,62 @@ public partial class SettingsWindow : Window
     private void HomeIcon_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         if (!Equals(sender, this.FindControl<Image>("HomeIcon"))) return;
-        var generalScreenWindow = new GeneralScreenWindow();
-        generalScreenWindow.Show();
-        Close();
+        if (GameScaner.FileExists())
+        {
+            var generalScreenWindow = new GeneralScreenWindow();
+            generalScreenWindow.Show();
+            Close();
+        }
+        else
+        {
+            var generalWithout = new GeneralWithoutHEX();
+            generalWithout.Show();
+            Close();
+        }
         e.Handled = true;
     }
     
     private void HeartIcon_OnPointerPressed(object? sender, PointerPressedEventArgs e)
     {
         if (!Equals(sender, this.FindControl<Image>("HeartIcon"))) return;
-        var favoriteGamesWindow = new FavoriteGamesWindow();
-        favoriteGamesWindow.Show();
-        Close();
+        switch (GeneralScreenWindow.HaveLad)
+        {
+            case true when GeneralScreenWindow.HaveHex:
+            {
+                var ladandhex = new LADandHEX();
+                ladandhex.Show();
+                Close();
+                break;
+            }
+            case true when !GeneralScreenWindow.HaveHex:
+            {
+                var lad = new LAD();
+                lad.Show();
+                Close();
+                break;
+            }
+            case false when GeneralScreenWindow.HaveHex:
+            {
+                var hex = new HEX();
+                hex.Show();
+                Close();
+                break;
+            }
+            case false when !GeneralScreenWindow.HaveHex:
+            {
+                var favoriteGamesWindow = new FavoriteGamesWindow();
+                favoriteGamesWindow.Show();
+                Close();
+                break;
+            }
+            default:
+            {
+                var favoriteGamesWindow = new FavoriteGamesWindow();
+                favoriteGamesWindow.Show();
+                Close();
+                break;
+            }
+        }
         e.Handled = true;
     }
 

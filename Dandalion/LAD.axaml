@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="756" d:DesignHeight="491"
-        x:Class="Dandalion.FavoriteGamesWindow"
+        x:Class="Dandalion.LAD"
         Title="Dandalion"
         WindowStartupLocation="CenterScreen"
         Width="756"
@@ -68,6 +68,23 @@
                                 <WrapPanel />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\light_and_darkness.png"
+                                   Width="120"
+                                   Height="180" />
+                            <TextBlock Text="LightAndDarkness"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="10,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       Width="150"
+                                       x:Name="PlayGameLAD"
+                                       Cursor="Hand"
+                                       PointerPressed="PlayGameLAD_OnPointerPressed" />
+                        </StackPanel>
                     </ItemsControl>
                 </ScrollViewer>
             </StackPanel>

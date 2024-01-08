@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="756" d:DesignHeight="491"
-        x:Class="Dandalion.FavoriteGamesWindow"
+        x:Class="Dandalion.GeneralWithoutHEX"
         Title="Dandalion"
         WindowStartupLocation="CenterScreen"
         Width="756"
@@ -35,17 +35,17 @@
                            Cursor="Hand"
                            x:Name="ProfileIcon"
                            PointerPressed="ProfileIcon_OnPointerPressed" />
-                    <Image Source="\assets\image\home.png"
+                    <Image Source="\assets\image\home_active.png"
+                           Height="32"
+                           Width="32"
+                           Margin="20,35,20,35" />
+                    <Image Source="\assets\image\heart.png"
                            Height="32"
                            Width="32"
                            Margin="20,35,20,35"
                            Cursor="Hand"
-                           x:Name="HomeIcon"
-                           PointerPressed="HomeIcon_OnPointerPressed"/>
-                    <Image Source="\assets\image\heart_active.png"
-                           Height="32"
-                           Width="32"
-                           Margin="20,35,20,35" />
+                           x:Name="HeartIcon"
+                           PointerPressed="HeartIcon_OnPointerPressed" />
                     <Image Source="\assets\image\setting.png"
                            Height="32"
                            Width="32"
@@ -56,7 +56,7 @@
                 </StackPanel>
             </Border>
             <StackPanel Grid.Column="1">
-                <TextBlock Text="Избранные"
+                <TextBlock Text="Главная"
                            Foreground="White"
                            FontSize="40"
                            FontWeight="Bold"
@@ -68,6 +68,24 @@
                                 <WrapPanel />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
+
+                        <StackPanel Margin="10"
+                                    Width="120"
+                                    Height="200">
+                            <Image Source="\assets\image\light_and_darkness.png"
+                                   Width="120"
+                                   Height="180" />
+                            <TextBlock Text="LightAndDarkness"
+                                       FontSize="15"
+                                       FontWeight="SemiBold"
+                                       Foreground="White"
+                                       Margin="10,5,0,0"
+                                       HorizontalAlignment="Center"
+                                       Width="150"
+                                       x:Name="LoadGameLAD"
+                                       Cursor="Hand"
+                                       PointerPressed="LoadGameLAD_OnPointerPressed" />
+                        </StackPanel>
                     </ItemsControl>
                 </ScrollViewer>
             </StackPanel>

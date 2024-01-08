@@ -34,7 +34,7 @@ public partial class RegistrationWindow : Window
         var requestBody = new
         {
             userName = username,
-            email = email,
+            login = email,
             password = password
         };
 

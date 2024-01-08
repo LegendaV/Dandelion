@@ -6,19 +6,18 @@ using Avalonia.Markup.Xaml;
 
 namespace Dandalion;
 
-public partial class GeneralScreenWindow : Window
+public partial class GeneralWithoutHEX : Window
 {
     public static bool HaveLad = GameScaner.CheckGame("LightAndDarkness");
-    public static bool HaveHex = GameScaner.CheckGame("HexExe");
+    public static bool HaveHex = GameScaner.FileExists();
 
-    public GeneralScreenWindow()
+    public GeneralWithoutHEX()
     {
         InitializeComponent();
         this.FindControl<Image>("ProfileIcon")!.PointerPressed += ProfileIcon_OnPointerPressed;
         this.FindControl<Image>("HeartIcon")!.PointerPressed += HeartIcon_OnPointerPressed;
         this.FindControl<Image>("SettingIcon")!.PointerPressed += SettingIcon_OnPointerPressed;
         this.FindControl<TextBlock>("LoadGameLAD")!.PointerPressed += LoadGameLAD_OnPointerPressed;
-        this.FindControl<TextBlock>("LoadGameHEX")!.PointerPressed += LoadGameHEX_OnPointerPressed;
     }
 
     private void ProfileIcon_OnPointerPressed(object? sender, PointerPressedEventArgs e)
@@ -97,29 +96,6 @@ public partial class GeneralScreenWindow : Window
             Content = new TextBlock
             {
                 Text = "LightAndDarkness скачан!",
-                FontSize = 20,
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center
-            }
-        };
-        window.Show();
-        e.Handled = true;
-    }
-
-    private void LoadGameHEX_OnPointerPressed(object? sender, PointerPressedEventArgs e)
-    {
-        if (!Equals(sender, this.FindControl<TextBlock>("LoadGameHEX"))) return;
-        if (HaveHex) return;
-        GameLoader.Load("https://github.com/LegendaV/HexExe", "7739d58a6f3abae9be5066b14dc753e6b459b92b");
-        HaveHex = true;
-        var window = new Window
-        {
-            Title = "Message",
-            Width = 300,
-            Height = 100,
-            Content = new TextBlock
-            {
-                Text = "HEX скачан!",
                 FontSize = 20,
                 HorizontalAlignment = HorizontalAlignment.Center,
                 VerticalAlignment = VerticalAlignment.Center
